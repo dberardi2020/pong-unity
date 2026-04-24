@@ -5,6 +5,7 @@ public class BallController : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private float speedIncrement = 0.5f;
     [SerializeField] private float maxSpeed = 20f;
+    [SerializeField] private float punchSpeedBoost = 3f;
 
     private Rigidbody2D rb;
     private float baseSpeed;
@@ -30,8 +31,13 @@ public class BallController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Paddle"))
-            speed = Mathf.Min(speed + speedIncrement, maxSpeed);
+        if (!collision.gameObject.CompareTag("Paddle")) return;
+
+        speed = Mathf.Min(speed + speedIncrement, maxSpeed);
+
+        PaddlePunch punch = collision.gameObject.GetComponent<PaddlePunch>();
+        if (punch != null && punch.IsPunching)
+            speed = Mathf.Min(speed + punchSpeedBoost, maxSpeed);
     }
 
     public void ResetBall()
