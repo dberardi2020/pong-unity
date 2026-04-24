@@ -33,5 +33,6 @@ First game from [Round To It Studio](https://github.com/dberardi2020/RoundToItSt
 | Doc | Purpose |
 |-----|---------|
 | [Overview](docs/Overview.md) | Concept, goals, and scope |
-| [Design](docs/DESIGN.md) | Full game design and technical spec |
-| [Build Guide](docs/BuildGuide.md) | Step-by-step implementation guide |
+| [Design Guide](docs/Design%20Guide.md) | Full game design and technical spec |
+| [Build Guide](docs/Build%20Guide.md) | Step-by-step implementation guide |
+| [Components](docs/Components.md) | Unity components reference |
