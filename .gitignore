@@ -22,5 +22,8 @@ Thumbs.db
 *.suo
 *.user
 
+# Obsidian local config
+docs/.obsidian/workspace.json
+
 # Unity Recorder output
 Recordings/
